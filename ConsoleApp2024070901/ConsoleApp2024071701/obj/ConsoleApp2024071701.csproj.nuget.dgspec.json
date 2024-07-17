@@ -1,0 +1,168 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\leo_20240605\\githubcode\\ConsoleApp2024070901\\ConsoleApp2024071701\\ConsoleApp2024071701.csproj": {}
+  },
+  "projects": {
+    "D:\\leo_20240605\\githubcode\\ConsoleApp2024070901\\ConsoleApp2024071701\\ConsoleApp2024071701.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\leo_20240605\\githubcode\\ConsoleApp2024070901\\ConsoleApp2024071701\\ConsoleApp2024071701.csproj",
+        "projectName": "ConsoleApp2024071701",
+        "projectPath": "D:\\leo_20240605\\githubcode\\ConsoleApp2024070901\\ConsoleApp2024071701\\ConsoleApp2024071701.csproj",
+        "packagesPath": "D:\\nuget\\packages",
+        "outputPath": "D:\\leo_20240605\\githubcode\\ConsoleApp2024070901\\ConsoleApp2024071701\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\59818\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "D:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.cdn.azure.cn/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\leo_20240605\\githubcode\\ConsoleApp2024070901\\OPCUaClient\\OPCUaClient\\OPCUaClient.csproj": {
+                "projectPath": "D:\\leo_20240605\\githubcode\\ConsoleApp2024070901\\OPCUaClient\\OPCUaClient\\OPCUaClient.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "OPCFoundation.NetStandard.Opc.Ua": {
+              "target": "Package",
+              "version": "[1.5.374.78, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\leo_20240605\\githubcode\\ConsoleApp2024070901\\OPCUaClient\\OPCUaClient\\OPCUaClient.csproj": {
+      "version": "1.10.0",
+      "restore": {
+        "projectUniqueName": "D:\\leo_20240605\\githubcode\\ConsoleApp2024070901\\OPCUaClient\\OPCUaClient\\OPCUaClient.csproj",
+        "projectName": "OPCUaClient",
+        "projectPath": "D:\\leo_20240605\\githubcode\\ConsoleApp2024070901\\OPCUaClient\\OPCUaClient\\OPCUaClient.csproj",
+        "packagesPath": "D:\\nuget\\packages",
+        "outputPath": "D:\\leo_20240605\\githubcode\\ConsoleApp2024070901\\OPCUaClient\\OPCUaClient\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\59818\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "D:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.cdn.azure.cn/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "OPCFoundation.NetStandard.Opc.Ua": {
+              "target": "Package",
+              "version": "[1.4.372.106, )"
+            },
+            "OPCFoundation.NetStandard.Opc.Ua.Client": {
+              "target": "Package",
+              "version": "[1.4.372.106, )"
+            },
+            "OPCFoundation.NetStandard.Opc.Ua.Configuration": {
+              "target": "Package",
+              "version": "[1.4.372.106, )"
+            },
+            "OPCFoundation.NetStandard.Opc.Ua.Core": {
+              "target": "Package",
+              "version": "[1.4.372.106, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

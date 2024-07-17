@@ -1,0 +1,376 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OPCUaClient</name>
+    </assembly>
+    <members>
+        <member name="T:OPCUaClient.Exceptions.ReadException">
+            <summary>
+            Error reading value
+            </summary>
+        </member>
+        <member name="M:OPCUaClient.Exceptions.ReadException.#ctor(System.String)">
+            <summary>
+            Main method
+            </summary>
+            <param name="message">
+            Error message
+            </param>
+        </member>
+        <member name="T:OPCUaClient.Objects.Device">
+            <summary>
+            Device on the OPC UA Server
+            </summary>
+        </member>
+        <member name="P:OPCUaClient.Objects.Device.Name">
+            <summary>
+            Name of the device
+            </summary>
+        </member>
+        <member name="P:OPCUaClient.Objects.Device.Address">
+            <summary>
+            Address of the device
+            </summary>
+        </member>
+        <member name="P:OPCUaClient.Objects.Device.Groups">
+            <summary>
+            Groups into the device <see cref="T:OPCUaClient.Objects.Group"/>
+            </summary>
+        </member>
+        <member name="P:OPCUaClient.Objects.Device.Tags">
+            <summary>
+            Tags into the device <see cref="T:OPCUaClient.Objects.Tag"/>
+            </summary>
+        </member>
+        <member name="T:OPCUaClient.Objects.Group">
+            <summary>
+            Group of tags.
+            </summary>
+        </member>
+        <member name="P:OPCUaClient.Objects.Group.Name">
+            <summary>
+            Name of the group
+            </summary>
+        </member>
+        <member name="P:OPCUaClient.Objects.Group.Address">
+            <summary>
+            Address of the group
+            </summary>
+        </member>
+        <member name="P:OPCUaClient.Objects.Group.Groups">
+            <summary>
+            Groups into the group <see cref="T:OPCUaClient.Objects.Group"/>
+            </summary>
+        </member>
+        <member name="P:OPCUaClient.Objects.Group.Tags">
+            <summary>
+            Tags into the group <see cref="T:OPCUaClient.Objects.Tag"/>
+            </summary>
+        </member>
+        <member name="T:OPCUaClient.Objects.Tag">
+            <summary>
+            Representation in class of a the tag of OPC UA Server
+            </summary>
+        </member>
+        <member name="P:OPCUaClient.Objects.Tag.Name">
+            <summary>
+            Name of the tag
+            </summary>
+        </member>
+        <member name="P:OPCUaClient.Objects.Tag.Address">
+            <summary>
+            Address of the tag
+            </summary>
+        </member>
+        <member name="P:OPCUaClient.Objects.Tag.Value">
+            <summary>
+            Value of the tag
+            </summary>
+        </member>
+        <member name="P:OPCUaClient.Objects.Tag.Code">
+            <summary>
+            Status code of the tag
+            </summary>
+        </member>
+        <member name="P:OPCUaClient.Objects.Tag.Quality">
+            <summary>
+            Quality of the tag
+            </summary>
+        </member>
+        <member name="T:OPCUaClient.UaClient">
+            <summary>
+            Client for OPCUA Server
+            </summary>
+        </member>
+        <member name="P:OPCUaClient.UaClient.IsConnected">
+            <summary>
+            Indicates if the instance is connected to the server.
+            </summary>
+        </member>
+        <member name="M:OPCUaClient.UaClient.#ctor(System.String,System.String,System.String,System.Boolean,System.Boolean,System.String,System.String)">
+            <summary>
+            Create a new instance
+            </summary>
+            <param name="appName">
+            Name of the application
+            </param>
+            <param name="serverUrl">
+            Url of server
+            </param>
+            <param name="security">
+            Enable or disable the security
+            </param>
+            <param name="untrusted">
+            Accept untrusted certificates
+            </param>
+            <param name="user">
+            User of the OPC UA Server
+            </param>
+            <param name="password">
+            Password of the user
+            </param>
+        </member>
+        <member name="M:OPCUaClient.UaClient.Connect(System.UInt32,System.Boolean)">
+            <summary>
+            Open the connection with the OPC UA Server
+            </summary>
+            <param name="timeOut">
+            Timeout to try to connect with the server in seconds.
+            </param>
+            <param name="keepAlive">
+            Sets whether to try to connect to the server in case the connection is lost.
+            </param>
+            <exception cref="T:OPCUaClient.Exceptions.ServerException"></exception>
+        </member>
+        <member name="M:OPCUaClient.UaClient.Disconnect">
+            <summary>
+            Close the connection with the OPC UA Server
+            </summary>
+        </member>
+        <member name="M:OPCUaClient.UaClient.Write(System.String,System.Object)">
+            <summary>
+            Write a value on a tag
+            </summary>
+            <param name="address">
+            Address of the tag
+            </param>
+            <param name="value">
+            Value to write
+            </param>
+            <exception cref="T:OPCUaClient.Exceptions.WriteException"></exception>
+        </member>
+        <member name="M:OPCUaClient.UaClient.Write(OPCUaClient.Objects.Tag)">
+            <summary>
+            Write a value on a tag
+            </summary>
+            <param name="tag"> <see cref="T:OPCUaClient.Objects.Tag"/></param>
+            <exception cref="T:OPCUaClient.Exceptions.WriteException"></exception>
+        </member>
+        <member name="M:OPCUaClient.UaClient.Read(System.String)">
+            <summary>
+            Read a tag of the sepecific address
+            </summary>
+            <param name="address">
+            Address of the tag
+            </param>
+            <returns>
+            <see cref="T:OPCUaClient.Objects.Tag"/>
+            </returns>
+        </member>
+        <member name="M:OPCUaClient.UaClient.Read``1(System.String)">
+            <summary>
+            Read an address
+            </summary>
+            <param name="address">
+            Address to read.
+            </param>
+            <typeparam name="TValue">
+            Type of value to read.
+            </typeparam>
+            <returns></returns>
+            <exception cref="T:OPCUaClient.Exceptions.ReadException">
+            If the status of read action is not good <see cref="T:Opc.Ua.StatusCodes"/>
+            </exception>
+            <exception cref="T:System.NotSupportedException">
+            If the type is not supported.
+            </exception>
+        </member>
+        <member name="M:OPCUaClient.UaClient.Write(System.Collections.Generic.List{OPCUaClient.Objects.Tag})">
+            <summary>
+            Write a lis of values
+            </summary>
+            <param name="tags"> <see cref="T:OPCUaClient.Objects.Tag"/></param>
+            <exception cref="T:OPCUaClient.Exceptions.WriteException"></exception>
+        </member>
+        <member name="M:OPCUaClient.UaClient.Read(System.Collections.Generic.List{System.String})">
+            <summary>
+            Read a list of tags on the OPCUA Server
+            </summary>
+            <param name="address">
+            List of address to read.
+            </param>
+            <returns>
+            A list of tags <see cref="T:OPCUaClient.Objects.Tag"/>
+            </returns>
+        </member>
+        <member name="M:OPCUaClient.UaClient.Monitoring(System.String,System.Int32,Opc.Ua.Client.MonitoredItemNotificationEventHandler)">
+            <summary>
+            Monitoring a tag and execute a function when the value change
+            </summary>
+            <param name="address">
+            Address of the tag
+            </param>
+            <param name="miliseconds">
+            Sets the time to check changes in the tag
+            </param>
+            <param name="monitor">
+            Function to execute when the value changes.
+            </param>
+        </member>
+        <member name="M:OPCUaClient.UaClient.Devices(System.Boolean)">
+            <summary>
+            Scan root folder of OPC UA server and get all devices
+            </summary>
+            <param name="recursive">
+            Indicates whether to search within device groups
+            </param>
+            <returns>
+            List of <see cref="T:OPCUaClient.Objects.Device"/>
+            </returns>
+        </member>
+        <member name="M:OPCUaClient.UaClient.Groups(System.String,System.Boolean)">
+            <summary>
+            Scan an address and retrieve the tags and groups
+            </summary>
+            <param name="address">
+            Address to search
+            </param>
+            <param name="recursive">
+            Indicates whether to search within group groups
+            </param>
+            <returns>
+            List of <see cref="T:OPCUaClient.Objects.Group"/>
+            </returns>
+        </member>
+        <member name="M:OPCUaClient.UaClient.Tags(System.String)">
+            <summary>
+            Scan an address and retrieve the tags.
+            </summary>
+            <param name="address">
+            Address to search
+            </param>
+            <returns>
+            List of <see cref="T:OPCUaClient.Objects.Tag"/>
+            </returns>
+        </member>
+        <member name="M:OPCUaClient.UaClient.DevicesAsync(System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Scan root folder of OPC UA server and get all devices
+            </summary>
+            <param name="recursive">
+            Indicates whether to search within device groups
+            </param>
+            <returns>
+            List of <see cref="T:OPCUaClient.Objects.Device"/>
+            </returns>
+        </member>
+        <member name="M:OPCUaClient.UaClient.GroupsAsync(System.String,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Scan an address and retrieve the tags and groups
+            </summary>
+            <param name="address">
+            Address to search
+            </param>
+            <param name="recursive">
+            Indicates whether to search within group groups
+            </param>
+            <param name="ct"></param>
+            <returns>
+            List of <see cref="T:OPCUaClient.Objects.Group"/>
+            </returns>
+        </member>
+        <member name="M:OPCUaClient.UaClient.TagsAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Scan an address and retrieve the tags.
+            </summary>
+            <param name="address">
+            Address to search
+            </param>
+            <param name="ct"></param>
+            <returns>
+            List of <see cref="T:OPCUaClient.Objects.Tag"/>
+            </returns>
+        </member>
+        <member name="M:OPCUaClient.UaClient.WriteAsync(System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            Write a value on a tag
+            </summary>
+            <param name="address">
+            Address of the tag
+            </param>
+            <param name="value">
+            Value to write
+            </param>
+            <param name="ct"></param>
+        </member>
+        <member name="M:OPCUaClient.UaClient.WriteAsync(OPCUaClient.Objects.Tag,System.Threading.CancellationToken)">
+            <summary>
+            Write a value on a tag
+            </summary>
+            <param name="tag"> <see cref="T:OPCUaClient.Objects.Tag"/></param>
+            <param name="ct"></param>
+        </member>
+        <member name="M:OPCUaClient.UaClient.WriteAsync(System.Collections.Generic.List{OPCUaClient.Objects.Tag},System.Threading.CancellationToken)">
+            <summary>
+            Write a lis of values
+            </summary>
+            <param name="tags"><see cref="T:OPCUaClient.Objects.Tag"/></param>
+            <param name="ct">
+            Cancellation token
+            </param>
+        </member>
+        <member name="M:OPCUaClient.UaClient.ReadAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Read a tag of the sepecific address
+            </summary>
+            <param name="address">
+            Address of the tag
+            </param>
+            <param name="ct"></param>F
+            <returns>
+            <see cref="T:OPCUaClient.Objects.Tag"/>
+            </returns>
+        </member>
+        <member name="M:OPCUaClient.UaClient.ReadAsync``1(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Read an address
+            </summary>
+            <param name="address">
+            Address to read.
+            </param>
+            <param name="ct"></param>
+            <typeparam name="TValue">
+            Type of value to read.
+            </typeparam>
+            <returns></returns>
+            <exception cref="T:OPCUaClient.Exceptions.ReadException">
+            If the status of read action is not good <see cref="T:Opc.Ua.StatusCodes"/>
+            </exception>
+            <exception cref="T:System.NotSupportedException">
+            If the type is not supported.
+            </exception>
+        </member>
+        <member name="M:OPCUaClient.UaClient.ReadAsync(System.Collections.Generic.IEnumerable{System.String},System.Threading.CancellationToken)">
+            <summary>
+            Read a list of tags on the OPCUA Server
+            </summary>
+            <param name="address">
+            List of address to read.
+            </param>
+            <param name="ct"></param>
+            <returns>
+            A list of tags <see cref="T:OPCUaClient.Objects.Tag"/>
+            </returns>
+        </member>
+    </members>
+</doc>

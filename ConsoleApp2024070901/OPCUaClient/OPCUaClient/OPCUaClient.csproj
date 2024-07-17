@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <Description>Client for OPC UA Server</Description>
+    <PackageReadmeFile>README.MD</PackageReadmeFile>
+    <PackageIcon>connection.png</PackageIcon>
+    <RepositoryUrl>https://github.com/joc-luis/OPCUaClient</RepositoryUrl>
+    <PackageTags>OPCUa Client OPC Ua</PackageTags>
+    <RepositoryType>GIT</RepositoryType>
+    <PackageReleaseNotes>Add new read function.
+Add bugs to fix later.</PackageReleaseNotes>
+    <Copyright>Joc-Luis</Copyright>
+    <ApplicationIcon>connection.ico</ApplicationIcon>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Company>$(Authors)</Company>
+    <Version>1.7.0</Version>
+    <PackageVersion>1.10.0</PackageVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="connection.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\README.MD">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OPCFoundation.NetStandard.Opc.Ua" Version="1.4.372.106" />
+    <PackageReference Include="OPCFoundation.NetStandard.Opc.Ua.Client" Version="1.4.372.106" />
+    <PackageReference Include="OPCFoundation.NetStandard.Opc.Ua.Configuration" Version="1.4.372.106" />
+    <PackageReference Include="OPCFoundation.NetStandard.Opc.Ua.Core" Version="1.4.372.106" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="connection.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
